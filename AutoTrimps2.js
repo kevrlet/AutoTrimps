@@ -1391,6 +1391,7 @@ function mainLoop() {
     if (getPageSetting('RunMapsWhenStuck')) autoMap();
     if (getPageSetting('GeneticistTimer') >= 0) manageGenes();
     if (getPageSetting('AutoStance')) autoStance();
+    if (getPageSetting('RemoveShieldBlock')) removeShieldblock();
     if (autoTrimpSettings.AutoPortal.selected != "Off") autoPortal();
     //if autostance is not on, we should do base calculations here so stuff like automaps still works
     else {
