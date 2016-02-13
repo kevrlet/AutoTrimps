@@ -531,11 +531,15 @@ function initializeAutoTrimps() {
 
 function removeShieldblock() {
 	if (game.upgrades.Shieldblock.done == 1) {
+		settingChanged('BuyShieldblock');
 		prestigeEquipment("Shield", false, true);
 		game.equipment.Shield.blockNow = false;
 		game.equipment.Shield.tooltip = "A big, wooden shield. Adds $healthCalculated$ health to each soldier per level.";
 		levelEquipment("Shield", 1);
 		game.upgrades.Shieldblock.done = 0;	
+	}
+	else {
+		settingChanged('RemoveShieldblock');
 	}
 }
 
