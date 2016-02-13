@@ -539,7 +539,7 @@ function removeShieldblock() {
 		game.upgrades.Shieldblock.done = 0;	
 	}
 	else {
-		settingChanged('RemoveShieldblock');
+		settingChanged('RemoveShieldBlock');
 	}
 }
 
