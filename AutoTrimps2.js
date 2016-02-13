@@ -160,7 +160,7 @@ function getPageSetting(setting) {
 function debug(message) {
     if (enableDebug)
         console.log(timeStamp() + ' ' + message);
-        message(message, "Loot", "*eye2", "exotic");
+        message("Test", "Loot", "*eye2", "exotic");
 }
 
 //Simply returns a formatted text timestamp
