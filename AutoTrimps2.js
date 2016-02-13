@@ -157,10 +157,10 @@ function getPageSetting(setting) {
 }
 
 //Global debug message (need to implement debugging to in game window)
-function debug(message) {
+function debug(messageT) {
     if (enableDebug)
-        console.log(timeStamp() + ' ' + message);
-        message("Test", "Loot", "*eye2", "exotic");
+        console.log(timeStamp() + ' ' + messageT);
+        message(messageT, "Loot", "*eye2", "exotic");
 }
 
 //Simply returns a formatted text timestamp
