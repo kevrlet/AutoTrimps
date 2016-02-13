@@ -28,6 +28,7 @@ createSetting('BuildTributes', 'Build Tributes', 'All praise to the Dragimp', 'b
 createSetting('BuildNurseries', 'Build Nurseries', 'I can smell it from the throne', 'boolean');
 createSetting('EasyMode', 'Easy Mode', 'Automatically changes settings based on current progress. Just worker ratios right now.', 'boolean');
 createSetting('ManageBreedtimer', 'Manage Breed Timer', 'Automatically manage the breed timer. EFFECTIVELY LOCKS THE BREED TIMER', 'boolean');
+createSetting('RemoveShieldBlock', 'Unlearn Shield Block', 'Unlearn Shield Block so Shield will give HP again', 'boolean');
 // createSetting('', '', '', 'boolean');
 //Values
 createSetting('GeneticistTimer', 'Geneticist Timer', 'Breed time in seconds to shoot for using geneticists. MUST HAVE GAMES BASE SETTING BREED TIMER TURNED ON. CANNOT CHANGE WITH MANAGE BREED TIMER OPTION ON', 'value', '30');
