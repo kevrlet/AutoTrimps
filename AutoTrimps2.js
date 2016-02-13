@@ -538,7 +538,7 @@ function removeShieldblock() {
 		levelEquipment("Shield", 1);
 		game.upgrades.Shieldblock.done = 0;	
 	}
-	else {
+	else if (getPageSetting('RemoveShieldBlock')) {
 		settingChanged('RemoveShieldBlock');
 	}
 }
