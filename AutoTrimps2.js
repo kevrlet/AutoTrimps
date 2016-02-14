@@ -355,7 +355,7 @@ function evaluateEfficiency(equipName) {
         }
     }
     //wall (don't buy any more equipment, buy prestige first) is true if the limit equipment option is on and we are past our limit 
-    if (gameResource.level > 9 && getPageSetting('LimitEquipment')) {
+    if (gameResource.level > 10 && getPageSetting('LimitEquipment')) {
         Wall = true;
     }
     return {
@@ -739,7 +739,8 @@ function autoLevelEquipment() {
             var BKey = equip.Stat + equip.Resource;
             // debug(equipName + ' bkey ' + BKey);
 
-            if (Best[BKey].Factor === 0 || Best[BKey].Factor < evaluation.Factor) {
+	    //need to account for Wall or the auto-buy gets stuck
+            if (!evaluation.Wall && (Best[BKey].Factor === 0 || Best[BKey].Factor < evaluation.Factor)) {
                 Best[BKey].Factor = evaluation.Factor;
                 Best[BKey].Name = equipName;
                 Best[BKey].Wall = evaluation.Wall;
