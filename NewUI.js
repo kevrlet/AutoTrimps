@@ -8,30 +8,32 @@ automationMenuInit();
 
 //Booleans
 createSetting('BuyStorage', 'Buy Storage', 'Will buy storage when resource is almost full', 'boolean');
-createSetting('ManualGather', 'Auto Gather', 'Will automatically gather resources and build. MAY NOT WORK WELL AT THE START OF A GAME WITH LOW SCIENCE LEVEL.', 'boolean');
+createSetting('ManualGather', 'Auto Gather', 'Will automatically gather resources and build.', 'boolean');
 createSetting('AutoFight', 'Better Auto Fight', 'Will automatically handle fighting.', 'boolean');
 createSetting('BuyJobs', 'Buy Jobs', 'Buys jobs based on ratios configured', 'boolean');
 createSetting('BuyBuildings', 'Buy Buildings', 'Will buy non storage buildings as soon as they are available', 'boolean');
-createSetting('BuyUpgrades', 'Buy Upgrades', 'autobuy non eqipment Upgrades', 'boolean');
-createSetting('AutoStance', 'Auto Stance', 'I am the lord of the stance said he', 'boolean');
+createSetting('BuyUpgrades', 'Buy Upgrades', 'Autobuy non eqipment Upgrades', 'boolean');
+createSetting('AutoStance', 'Auto Stance', 'Automatically swap stances to avoid death.', 'boolean');
 createSetting('BuyArmor', 'Buy Armor', 'Will buy the most efficient armor available', 'boolean');
 createSetting('BuyArmorUpgrades', 'Buy Armor Upgrades', 'Will buy the most efficient armor upgrade available', 'boolean');
 createSetting('BuyWeapons', 'Buy Weapons', 'Will buy the most efficient weapon available', 'boolean');
 createSetting('BuyWeaponUpgrades', 'Buy Weapon Upgrades', 'Will buy the most efficient weapon upgrade available', 'boolean');
-createSetting('LimitEquipment', 'Limit Equipment', 'Limit levels of equipment bought to 11-prestige level.', 'boolean');
-createSetting('BuyShieldblock', 'Buy Shield Block', 'Will buy the shield block upgrade', 'boolean');
+createSetting('LimitEquipment', 'Limit Equipment', 'Limit levels of equipment bought to 11-prestige level. WARNING: may reduce He/hr performance in many cases.', 'boolean');
+createSetting('BuyShieldblock', 'Buy Shield Block', 'Will buy the shield block upgrade. If you are progressing past zone 60, you probably don\'t want this', 'boolean');
+createSetting('RemoveShieldBlock', 'Unlearn Shield Block', 'Unlearn Shield Block so Shield will give HP again', 'boolean');
 createSetting('RunUniqueMaps', 'Run Unique Maps', 'Auto run unique maps', 'boolean');
 createSetting('RunMapsWhenStuck', 'Auto Maps', 'Automatically run maps to progress', 'boolean');
 createSetting('HireScientists', 'Hire Scientists', 'We are nerds and we like to party', 'boolean');
 createSetting('BuildGyms', 'Build Gyms', 'Time for a workout', 'boolean');
 createSetting('BuildTributes', 'Build Tributes', 'All praise to the Dragimp', 'boolean');
 createSetting('BuildNurseries', 'Build Nurseries', 'I can smell it from the throne', 'boolean');
-createSetting('EasyMode', 'Easy Mode', 'Automatically changes settings based on current progress. Just worker ratios right now.', 'boolean');
-createSetting('ManageBreedtimer', 'Manage Breed Timer', 'Automatically manage the breed timer. EFFECTIVELY LOCKS THE BREED TIMER', 'boolean');
-createSetting('RemoveShieldBlock', 'Unlearn Shield Block', 'Unlearn Shield Block so Shield will give HP again', 'boolean');
+createSetting('EasyMode', 'Easy Mode', 'Automatically changes settings based on current progress. Just worker ratios right now. WARNING: overrides worker ratio settings.', 'boolean');
+createSetting('ManageBreedtimer', 'Manage Breed Timer', 'Automatically manage the breed timer. Picks appropriate timers for various challenges. Delays purchasing potency and nurseries if trying to raise the timer. EFFECTIVELY LOCKS THE BREED TIMER', 'boolean');
+createSetting('BreedFire', 'Breed Fire', 'Fire Lumberjacks and Miners to speed up breeding when needed', 'boolean');
+createSetting('MaxTox', 'Max Toxicity Stacks', 'Get maximum toxicity stacks before killing the improbability in each zone 60 and above. Generally only recommended for 1 run to maximize bone portal value.', 'boolean');
 // createSetting('', '', '', 'boolean');
 //Values
-createSetting('GeneticistTimer', 'Geneticist Timer', 'Breed time in seconds to shoot for using geneticists. MUST HAVE GAMES BASE SETTING BREED TIMER TURNED ON. CANNOT CHANGE WITH MANAGE BREED TIMER OPTION ON', 'value', '30');
+createSetting('GeneticistTimer', 'Geneticist Timer', 'Breed time in seconds to shoot for using geneticists. CANNOT CHANGE WITH MANAGE BREED TIMER OPTION ON', 'value', '30');
 createSetting('FarmerRatio', 'Farmer Ratio', '', 'value', '1');
 createSetting('LumberjackRatio', 'Lumberjack Ratio', '', 'value', '1');
 createSetting('MinerRatio', 'Miner Ratio', '', 'value', '1');
@@ -42,15 +44,17 @@ createSetting('MaxHouse', 'Max House', '', 'value', '50');
 createSetting('MaxMansion', 'MaxMansion', '', 'value', '50');
 createSetting('MaxHotel', 'Max Hotel', '', 'value', '50');
 createSetting('MaxResort', 'Max Resort', '', 'value', '50');
-createSetting('MaxGateway', 'Max Gateway', '', 'value', '25');
+createSetting('MaxGateway', 'Max Gateway', 'WARNING: Not recommended to raise above 25', 'value', '25');
+createSetting('MaxWormhole', 'Max Wormhole', 'WARNING: Wormholes cost helium! Values below 0 do nothing.', 'value', '0');
 createSetting('MaxCollector', 'Max Collector', '', 'value', '-1');
 createSetting('FirstGigastation', 'First Gigastation', 'How many warpstations to buy before your first gigastation', 'value', '20');
 createSetting('DeltaGigastation', 'Delta Gigastation', 'How many extra warpstations to buy for each gigastation. Supports fractional values. For example 2.5 will buy +2/+3/+2/+3...', 'value', '2');
 createSetting('MaxGym', 'Max Gym', '', 'value', '-1');
 createSetting('MaxTribute', 'Max Tribute', '', 'value', '-1');
 createSetting('MaxNursery', 'Max Nursery', '', 'value', '-1');
+createSetting('VoidMaps', 'Void Maps', 'The zone at which you want all your void maps to be cleared. 0 is off', 'value', '0');
 // createSetting('', '', '', 'value', '30');
-//Dropdown
+//Dropdown + context sensitive
 createSetting('Prestige', 'Prestige', 'Acquire prestiges through the selected item (inclusive) as soon as they are available in maps. Forces equip first mode. Automap must be enabled.', 'dropdown', 'Off', ['Off', 'Supershield', 'Dagadder', 'Bootboost', 'Megamace', 'Hellishmet', 'Polierarm', 'Pantastic', 'Axeidic', 'Smoldershoulder', 'Greatersword', 'Bestplate', 'Harmbalest', 'GambesOP']);
 createSetting('AutoPortal', 'Auto Portal', 'Automatically portal', 'dropdown', 'Off', ['Off', 'Helium Per Hour', 'Balance', 'Electricity', 'Crushed', 'Nom', 'Toxicity', 'Custom']);
 createSetting('HeliumHourChallenge', 'Challenge for Helium per Hour', 'Automatically portal with this challenge when using helium per hour autoportal.', 'dropdown', 'None', ['None', 'Balance', 'Electricity', 'Crushed', 'Nom', 'Toxicity']);
@@ -89,13 +93,10 @@ function automationMenuInit() {
     newContainer.appendChild(abutton);
     fightButtonCol.appendChild(newContainer);
 
-    //create Helium per hour
-    var heHour = document.createElement("SPAN");
-    heHour.setAttribute("class", "ownedArea");
-    heHour.setAttribute("style", "display: block; opacity: 1; color:white;");
-    heHour.setAttribute("id", "customHeHour");
-    gameHe = document.getElementById('helium');
-    gameHe.appendChild(heHour);
+     //make timer click toggle paused mode
+    document.getElementById('portalTimer').setAttribute('onclick', 'toggleSetting(\'pauseGame\')');
+    document.getElementById('portalTimer').setAttribute('style', 'cursor: default');
+
 
     //create the space to place the automation settings.
     document.getElementById("settingsRow").innerHTML += '<div id="autoSettings" style="display: none;margin-bottom: 2vw;margin-top: 2vw;"></div>';
@@ -111,11 +112,13 @@ function automationMenuInit() {
     script.innerHTML = html;
     //inject the scripts
     document.body.appendChild(script);
+
 }
 
 function createSetting(id, name, description, type, defaultValue, list) {
     var btnParent = document.createElement("DIV");
-    btnParent.setAttribute('class', 'optionContainer');
+   // btnParent.setAttribute('class', 'optionContainer');
+   btnParent.setAttribute('style', 'display: inline-block; vertical-align: top; margin-left: 1vw; margin-right: 1vw; margin-bottom: 1vw; width: 14.5vw;');
     var btn = document.createElement("DIV");
     btn.id = id;
     if (type == 'boolean') {
@@ -165,7 +168,8 @@ function createSetting(id, name, description, type, defaultValue, list) {
         }
         var btn = document.createElement("select");
         btn.id = id;
-        btn.setAttribute("style", "color:black");
+        if(game.options.menu.darkTheme.enabled == 2) btn.setAttribute("style", "color: #C8C8C8");
+        else btn.setAttribute("style", "color:black");
         btn.setAttribute("class", "settingBtn");
         btn.setAttribute("onmouseover", 'tooltip(\"' + name + '\", \"customText\", event, \"' + description + '\")');
         btn.setAttribute("onmouseout", 'tooltip("hide")');
@@ -283,12 +287,5 @@ function updateCustomButtons() {
     document.getElementById('Prestige').value = autoTrimpSettings.Prestige.selected;
     document.getElementById('AutoPortal').value = autoTrimpSettings.AutoPortal.selected;
     document.getElementById('HeliumHourChallenge').value = autoTrimpSettings.HeliumHourChallenge.selected;
-}
 
-function updateCustomStats() {
-    var timeThisPortal = new Date().getTime() - game.global.portalTime;
-    timeThisPortal /= 3600000;
-    var resToUse = game.resources.helium.owned;
-    var heHr = prettify(Math.floor(game.resources.helium.owned / timeThisPortal));
-    document.getElementById('customHeHour').innerHTML = heHr + "/Hr";
 }
